@@ -1,8 +1,9 @@
 <?php
 if(isset($_GET['tiktok_url'])){
     $content =     file_get_contents("https://api.douyin.wtf/api?url=".$_GET['tiktok_url']);
- 
- $result  = json_decode($content);
- echo print_r(json_encode($result));
+     echo json_encode($content);
+     $newJsonString = json_encode($content);
+    file_put_contents('jsonFile.json', $newJsonString);
 }
+
 ?>
