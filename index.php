@@ -4,7 +4,9 @@ if(isset($_GET['tiktok_url'])){
     // print_r($content);
 
     $yummy = json_decode($content);
-    echo $yummy->nwm_video_url;
+    // echo $yummy->nwm_video_url;
+
+    header("Location: ".$yummy->nwm_video_url);
 
     // $res = array('nwm_video_url' => $yummy->nwm_video_url);
     
